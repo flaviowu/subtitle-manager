@@ -6,6 +6,7 @@ namespace SubtitleLib.Tests
     [TestClass()]
     public class SubtitlesTests
     {
+        // Test Parse
         [TestMethod()]
         public void ParseTest_Output()
         {
@@ -21,10 +22,40 @@ namespace SubtitleLib.Tests
         {
             string subtitleString = "1\n00:00:00,000 --> 00:00:03,000\nSome Text and more text to test.\n";
             ArrayList subtitles = Subtitles.Parse(subtitleString);
-            var ooo = subtitles[0];
-            // SubtitleBlock blocao = new SubtitleBlock("1", "00:00:00,000", "00:00:03,000", "Some Text and more text to test.");
-            bool asa = true;
-            Assert.IsTrue(asa);
+            var result = subtitles[0].ToString();
+            Assert.AreEqual(result, subtitleString);
         }
+
+        // Test Offset
+        [TestMethod()]
+        public void OffsetTest_Output_StartTime()
+        {
+            string subtitleString = "1\n00:00:00,000 --> 00:00:03,000\nSome Text and more text to test.\n";
+            string startTime = "00:00:01,125";
+            double offset = 1.125;
+
+            ArrayList subtitles = Subtitles.Parse(subtitleString);
+            ArrayList syncedSubtitles = Subtitles.Offset(subtitles, offset);
+            var result = subtitles[0].StartTime;
+
+            Assert.IsTrue(result == startTime);
+
+        }
+
+        [TestMethod()]
+        public void OffsetTest_Output_EndTime()
+        {
+            string subtitleString = "1\n00:00:00,000 --> 00:00:03,000\nSome Text and more text to test.\n";
+            string endTime = "00:00:04,125";
+            double offset = 1.125;
+
+            ArrayList subtitles = Subtitles.Parse(subtitleString);
+            ArrayList syncedSubtitles = Subtitles.Offset(subtitles, offset);
+            var result = subtitles[0].EndTime;
+
+            Assert.IsTrue(result == endTime);
+
+        }
+
     }
 }
