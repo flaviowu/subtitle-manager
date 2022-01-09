@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace SubtitleLib
 {
     public class Subtitles
     {
-        public ArrayList Parse(string subtitleString)
+        public static ArrayList Parse(string subtitleString)
         {
 
             Regex rx = new Regex(
