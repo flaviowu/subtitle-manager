@@ -62,6 +62,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SutitleLib\SubtitleManager.csproj">
+      <Project>{f16982ec-4a81-4069-b6ad-9dfc2f249e16}</Project>
+      <Name>SubtitleManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
