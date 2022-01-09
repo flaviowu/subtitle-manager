@@ -3,14 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1758
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubtitleManager", "ClassLibrary1\SubtitleManager.csproj", "{F16982EC-4A81-4069-B6AD-9DFC2F249E16}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubtitleManagerTests", "SubtitleManagerTests\SubtitleManagerTests.csproj", "{2031D65A-153C-428A-875C-676ED45901C3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubtitleApp", "ConsoleApp1\SubtitleApp.csproj", "{CED443A8-AEDE-4354-9E45-199675D0BFD1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F16982EC-4A81-4069-B6AD-9DFC2F249E16} = {F16982EC-4A81-4069-B6AD-9DFC2F249E16}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubtitleManager", "SutitleLib\SubtitleManager.csproj", "{F16982EC-4A81-4069-B6AD-9DFC2F249E16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,18 +16,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F16982EC-4A81-4069-B6AD-9DFC2F249E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F16982EC-4A81-4069-B6AD-9DFC2F249E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F16982EC-4A81-4069-B6AD-9DFC2F249E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F16982EC-4A81-4069-B6AD-9DFC2F249E16}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2031D65A-153C-428A-875C-676ED45901C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2031D65A-153C-428A-875C-676ED45901C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2031D65A-153C-428A-875C-676ED45901C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2031D65A-153C-428A-875C-676ED45901C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CED443A8-AEDE-4354-9E45-199675D0BFD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CED443A8-AEDE-4354-9E45-199675D0BFD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CED443A8-AEDE-4354-9E45-199675D0BFD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CED443A8-AEDE-4354-9E45-199675D0BFD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F16982EC-4A81-4069-B6AD-9DFC2F249E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16982EC-4A81-4069-B6AD-9DFC2F249E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16982EC-4A81-4069-B6AD-9DFC2F249E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16982EC-4A81-4069-B6AD-9DFC2F249E16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

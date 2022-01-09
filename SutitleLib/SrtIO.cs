@@ -1,5 +1,4 @@
-﻿using SubtitleLib;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -22,7 +21,7 @@ namespace SubtitleLib
             {
                 Console.WriteLine("There was an error reading the file, returned a void string");
                 Console.WriteLine(e.Message);
-                return "";
+                return null;
             }
         }
 
