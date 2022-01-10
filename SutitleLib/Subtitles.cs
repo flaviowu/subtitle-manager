@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace SubtitleLib
 {
     public class Subtitles
     {
-        public static ArrayList Parse(string subtitleString)
+        public static List<SubtitleBlock> Parse(string subtitleString)
         {
 
             Regex rx = new Regex(
@@ -14,7 +14,7 @@ namespace SubtitleLib
           @"(?<endTime>\d{2}\:\d{2}\:\d{2},\d{3})\r\n(?<textContent>[\s\S]*?\r\n)",
           RegexOptions.Compiled | RegexOptions.ECMAScript);
 
-            ArrayList subtitleBlocksArray = new ArrayList();
+            List<SubtitleBlock> subtitleBlocksArray = new List<SubtitleBlock>();
             foreach (Match match in rx.Matches(subtitleString))
             {
                 SubtitleBlock subtitleBlock = new SubtitleBlock(
@@ -29,7 +29,7 @@ namespace SubtitleLib
             return subtitleBlocksArray;
         }
 
-        public static ArrayList Offset(ArrayList subtitles, double offsetTime)
+        public static List<SubtitleBlock> Offset(List<SubtitleBlock> subtitles, double offsetTime)
         {
             foreach (SubtitleBlock block in subtitles)
             {

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SubtitleLib
 {
@@ -25,7 +22,7 @@ namespace SubtitleLib
             }
         }
 
-        public static void WriteSrt(ArrayList subtitles, string filename)
+        public static void WriteSrt(List<SubtitleBlock> subtitles, string filename)
         {
             using (StreamWriter output = new StreamWriter($"{filename}.srt", false, Encoding.Default))
             {

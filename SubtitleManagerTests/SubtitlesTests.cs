@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace SubtitleLib.Tests
 {
@@ -13,7 +13,7 @@ namespace SubtitleLib.Tests
             string subtitleString = "1\n" +
                 "00:00:00,000 --> 00:00:03,000\n" +
                 "Some Text and morr text to test.\n";
-            ArrayList subtitles = Subtitles.Parse(subtitleString);
+            List<SubtitleBlock> subtitles = Subtitles.Parse(subtitleString);
             Assert.IsNotNull(subtitles);
         }
 
@@ -21,7 +21,7 @@ namespace SubtitleLib.Tests
         public void ParseTest_Output_values()
         {
             string subtitleString = "1\n00:00:00,000 --> 00:00:03,000\nSome Text and more text to test.\n";
-            ArrayList subtitles = Subtitles.Parse(subtitleString);
+            List<SubtitleBlock> subtitles = Subtitles.Parse(subtitleString);
             var result = subtitles[0].ToString();
             Assert.AreEqual(result, subtitleString);
         }
@@ -34,8 +34,8 @@ namespace SubtitleLib.Tests
             string startTime = "00:00:01,125";
             double offset = 1.125;
 
-            ArrayList subtitles = Subtitles.Parse(subtitleString);
-            ArrayList syncedSubtitles = Subtitles.Offset(subtitles, offset);
+            List<SubtitleBlock> subtitles = Subtitles.Parse(subtitleString);
+            List<SubtitleBlock> syncedSubtitles = Subtitles.Offset(subtitles, offset);
             var result = subtitles[0].StartTime;
 
             Assert.IsTrue(result == startTime);
@@ -49,8 +49,8 @@ namespace SubtitleLib.Tests
             string endTime = "00:00:04,125";
             double offset = 1.125;
 
-            ArrayList subtitles = Subtitles.Parse(subtitleString);
-            ArrayList syncedSubtitles = Subtitles.Offset(subtitles, offset);
+            List<SubtitleBlock> subtitles = Subtitles.Parse(subtitleString);
+            List<SubtitleBlock> syncedSubtitles = Subtitles.Offset(subtitles, offset);
             var result = subtitles[0].EndTime;
 
             Assert.IsTrue(result == endTime);
