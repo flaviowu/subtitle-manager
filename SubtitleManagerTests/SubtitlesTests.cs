@@ -35,7 +35,7 @@ namespace SubtitleLib.Tests
             double offset = 1.125;
 
             List<SubtitleBlock> subtitles = Subtitles.Parse(subtitleString);
-            List<SubtitleBlock> syncedSubtitles = Subtitles.Offset(subtitles, offset);
+            _ = Subtitles.Offset(subtitles, offset);
             var result = subtitles[0].StartTime;
 
             Assert.IsTrue(result == startTime);
@@ -50,7 +50,7 @@ namespace SubtitleLib.Tests
             double offset = 1.125;
 
             List<SubtitleBlock> subtitles = Subtitles.Parse(subtitleString);
-            List<SubtitleBlock> syncedSubtitles = Subtitles.Offset(subtitles, offset);
+            _ = Subtitles.Offset(subtitles, offset);
             var result = subtitles[0].EndTime;
 
             Assert.IsTrue(result == endTime);
